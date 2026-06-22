@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pāka · Indian Kitchen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="paka.css">
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+</head>
+<body>
+
+  <!-- App header -->
+  <header class="app-header">
+    <div class="app-logo">
+      <div class="logo-roundel">
+        <svg width="26" height="26" viewBox="0 0 92 92" fill="none">
+          <path d="M38 17c-4-5 3-9 0-14" stroke="#f7cf3f" stroke-width="3.4" stroke-linecap="round"/>
+          <path d="M54 17c4-5-3-9 0-14" stroke="#f7cf3f" stroke-width="3.4" stroke-linecap="round"/>
+          <ellipse cx="46" cy="29" rx="30" ry="7" fill="#fbf3d3"/>
+          <circle cx="46" cy="22" r="4.4" fill="#f7cf3f"/>
+          <path d="M16 31c0 22 8 38 30 38s30-16 30-38" fill="#fbf3d3"/>
+          <path d="M16 36c-8 0-10 12-1 13" stroke="#fbf3d3" stroke-width="5" stroke-linecap="round"/>
+          <path d="M76 36c8 0 10 12 1 13" stroke="#fbf3d3" stroke-width="5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <span class="logo-wordmark">Pāka</span>
+    </div>
+    <span class="app-tagline">Try Something Different Today</span>
+  </header>
+
+  <!-- Carousel -->
+  <main class="stage">
+    <button class="arrow arrow-l" id="prevBtn" aria-label="Previous recipe">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+           stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+        <polyline points="15,18 9,12 15,6"/>
+      </svg>
+    </button>
+
+    <div class="flyer-wrap">
+      <div class="flyer-card" id="flyerCard"></div>
+    </div>
+
+    <button class="arrow arrow-r" id="nextBtn" aria-label="Next recipe">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+           stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+        <polyline points="9,6 15,12 9,18"/>
+      </svg>
+    </button>
+  </main>
+
+  <p class="recipe-counter" id="recipeCounter"></p>
+
+  <!-- Suggest a recipe button -->
+  <button class="suggest-pill" id="suggestBtn">💡 Suggest a Recipe</button>
+
+  <!-- AI floating button -->
+  <button class="ai-pill" id="aiBtn">🧑‍🍳 What can I cook?</button>
+
+  <!-- QR modal -->
+  <div class="modal-overlay" id="qrOverlay">
+    <div class="modal-box">
+      <button class="modal-close" id="qrClose">✕</button>
+      <div class="modal-title">You cooked it!</div>
+      <div class="modal-sub">Scan to send your photo of <span id="qrRecipeName"></span></div>
+      <canvas id="qrCanvas"></canvas>
+    </div>
+  </div>
+
+  <!-- Suggest a recipe modal -->
+  <div class="modal-overlay" id="suggestOverlay">
+    <div class="modal-box suggest-box">
+      <button class="modal-close" id="suggestClose">✕</button>
+      <div class="modal-title">Suggest a Recipe</div>
+      <div class="modal-sub">We'd love to add your favourite dish!</div>
+      <textarea id="suggestInput" placeholder="e.g. Pesarattu, Gongura Chicken, Natu Kodi Pulusu…"></textarea>
+      <button class="suggest-submit" id="suggestSubmit">Send Suggestion →</button>
+    </div>
+  </div>
+
+  <!-- AI Drawer -->
+  <div class="ai-overlay" id="aiOverlay"></div>
+  <aside class="ai-drawer" id="aiDrawer" aria-hidden="true">
+    <div class="ai-drawer-head">
+      <span class="ai-drawer-title">What's in your kitchen?</span>
+      <button class="ai-close" id="aiClose" aria-label="Close">✕</button>
+    </div>
+    <div class="ai-chat" id="aiChat">
+      <div class="ai-bubble ai-bubble--bot">
+        Tell me what ingredients you have at home and I'll suggest what you can cook! Try: <em>"I have poha, onions, peanuts and lemon"</em>
+      </div>
+    </div>
+    <div class="ai-input-row">
+      <input class="ai-input" id="aiInput" type="text" placeholder="I have onion, peanuts, lemon, poha…" autocomplete="off">
+      <button class="ai-send" id="aiSend">Send</button>
+    </div>
+  </aside>
+
+  <script src="paka.js"></script>
+</body>
+</html>
