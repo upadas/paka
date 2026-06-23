@@ -1055,6 +1055,274 @@ const recipes = [
     tip: 'Preheat the oven well and use the top rack — besan needs high, dry heat to crisp up. A wet oven steams it instead of roasting.',
     tags: ['Vegan', 'Protein-rich', 'Gluten-free'],
   },
+
+  /* ── Andhra classics ────────────────────────────── */
+  {
+    id: 'pesarattu',
+    title: 'Pesarattu',
+    script: 'Crispy & Protein-Packed',
+    badge: 'ANDHRA GREEN MOONG CREPE',
+    blurb: 'Thin, crispy crepes made from whole green moong — no fermentation needed, and ready in minutes!',
+    readyMins: 20,
+    baseServings: 2,
+    heroEmoji: '🫓',
+    ingredients: [
+      { icon:'💚', t:'frac',  q:1,    u:'cup',   name:'whole green moong dal',       sub:'(soaked 4–6 hrs)', cal:350, key:'moong-dal' },
+      { icon:'🌶️',t:'count', q:2,    u:'',       name:'green chillies',              sub:'',                 cal:8,   key:'green-chilli' },
+      { icon:'🫚', t:'frac',  q:1,    u:'inch',  name:'ginger',                      sub:'',                 cal:5,   key:'ginger' },
+      { icon:'🟡', t:'frac',  q:0.25, u:'tsp',   name:'cumin seeds',                 sub:'',                 cal:2,   key:'cumin-seeds' },
+      { icon:'🧅', t:'frac',  q:0.5,  u:'medium',name:'onion, finely chopped',       sub:'(for topping)',    cal:22,  key:'onion' },
+      { icon:'🌱', t:'frac',  q:2,    u:'tbsp',  name:'fresh coriander, chopped',    sub:'(for topping)',    cal:1,   key:'coriander' },
+      { icon:'🫗', t:'frac',  q:2,    u:'tbsp',  name:'oil',                         sub:'(for cooking)',    cal:240, key:'oil' },
+      { icon:'🧂', t:'taste', text:'', name:'salt, to taste', sub:'', cal:0, key:'salt' },
+    ],
+    method: [
+      { title:'GRIND',           body:'Drain soaked moong. Blend with green chillies, ginger, cumin, and salt using just enough water to make a smooth, thick batter — thicker than dosa batter.' },
+      { title:'HEAT THE TAWA',   body:'Heat a flat pan on high until very hot. Sprinkle a few drops of water — they should evaporate instantly. Reduce to medium-high.' },
+      { title:'POUR & SPREAD',   body:'Pour a ladle of batter and spread thin in circular motions, just like dosa. The key is spreading while the pan is hot.' },
+      { title:'ADD TOPPINGS',    body:'Scatter a pinch of chopped onion and coriander over the surface. Press lightly.' },
+      { title:'COOK & FOLD',     body:'Drizzle oil around the edges and in the centre. Cook until edges crisp and turn golden. Fold and serve immediately.' },
+    ],
+    goodness: ['Very high in protein','No fermentation needed','Gluten-free','Low glycemic index'],
+    serveWith: [{ icon:'🫙', label:'Allam Chutney' }, { icon:'🥥', label:'Coconut Chutney' }, { icon:'☕', label:'Filter Coffee' }],
+    tip: 'The batter must be thick — it should not flow on its own when poured. Add water sparingly. A thin batter gives a flat, soft pesarattu.',
+    tags: ['Vegan', 'Gluten-free', 'High-protein', 'Diabetic-friendly'],
+  },
+  {
+    id: 'gongura-chicken',
+    title: 'Gongura Chicken',
+    script: 'Bold, Tangy & Fiery',
+    badge: 'ANDHRA SORREL CHICKEN',
+    blurb: 'Tender chicken slow-cooked in tangy gongura leaves and fiery spices — the crown jewel of Andhra cuisine!',
+    readyMins: 55,
+    baseServings: 4,
+    heroEmoji: '🍗',
+    ingredients: [
+      { icon:'🍗', t:'frac',  q:800,  u:'g',    name:'chicken (bone-in pieces)',    sub:'',                cal:1200, key:'chicken' },
+      { icon:'🌱', t:'frac',  q:200,  u:'g',    name:'gongura leaves (red sorrel)', sub:'(stalks removed)', cal:50,  key:'gongura' },
+      { icon:'🧅', t:'count', q:3,    u:'',     name:'onions, sliced',              sub:'',                cal:132,  key:'onion' },
+      { icon:'🍅', t:'count', q:2,    u:'',     name:'tomatoes, chopped',           sub:'',                cal:44,   key:'tomato' },
+      { icon:'🧄', t:'count', q:8,    u:'',     name:'garlic cloves',               sub:'',                cal:32,   key:'garlic' },
+      { icon:'🫚', t:'frac',  q:1.5,  u:'inch', name:'ginger',                      sub:'',                cal:8,    key:'ginger' },
+      { icon:'🌶️',t:'frac',  q:6,    u:'',     name:'dried red chillies',          sub:'(Guntur preferred)', cal:18, key:'red-chilli' },
+      { icon:'🟤', t:'frac',  q:1,    u:'tsp',  name:'mustard seeds',               sub:'',                cal:8,    key:'mustard-seeds' },
+      { icon:'🥄', t:'frac',  q:1,    u:'tsp',  name:'cumin seeds',                 sub:'',                cal:4,    key:'cumin-seeds' },
+      { icon:'✨', t:'frac',  q:1.5,  u:'tsp',  name:'garam masala',                sub:'',                cal:12,   key:'garam-masala' },
+      { icon:'🫗', t:'frac',  q:4,    u:'tbsp', name:'oil',                         sub:'',                cal:480,  key:'oil' },
+      { icon:'🧂', t:'taste', text:'', name:'salt, to taste', sub:'', cal:0, key:'salt' },
+    ],
+    method: [
+      { title:'COOK GONGURA',    body:'Heat 2 tbsp oil. Fry dried red chillies briefly, then add gongura leaves. Cook until completely wilted and soft, about 8 minutes. Cool and blend to a paste.' },
+      { title:'BROWN THE CHICKEN', body:'In a heavy kadhai, heat remaining oil. Add chicken pieces and fry on high heat until golden on all sides. Remove and set aside.' },
+      { title:'BUILD THE MASALA',body:'In the same oil, temper mustard and cumin. Add onions and fry until deep golden. Add ginger-garlic and cook 2 minutes. Add tomatoes and cook until oil separates.' },
+      { title:'ADD GONGURA',     body:'Add the blended gongura paste and garam masala. Cook the combined masala for 5 minutes — the colour will deepen to a rich red-green.' },
+      { title:'SLOW COOK',       body:'Return the chicken. Add salt and ¼ cup water. Cover and cook on low for 20–25 minutes until chicken is tender and oil surfaces. Do not rush this step.' },
+    ],
+    goodness: ['Very high in protein','Antioxidant-rich gongura','Authentic Andhra flavour','Iron-rich combination'],
+    serveWith: [{ icon:'🍚', label:'Hot Rice' }, { icon:'🫓', label:'Roti' }, { icon:'🧅', label:'Raw Onion' }],
+    tip: 'Use Guntur red chillies if you can find them — they give gongura chicken its signature deep red colour and fruity heat. Regular chillies work but the flavour differs.',
+    tags: ['High-protein', 'Gluten-free'],
+  },
+  {
+    id: 'natu-kodi-pulusu',
+    title: 'Natu Kodi Pulusu',
+    script: 'Deep, Rustic & Slow-Cooked',
+    badge: 'COUNTRY CHICKEN CURRY',
+    blurb: 'Free-range country chicken slow-cooked in a thick tamarind gravy — an Andhra village classic unlike any other!',
+    readyMins: 70,
+    baseServings: 4,
+    heroEmoji: '🍲',
+    ingredients: [
+      { icon:'🍗', t:'frac',  q:800,  u:'g',    name:'country chicken (natu kodi)', sub:'(bone-in, curry cut)', cal:1000, key:'chicken' },
+      { icon:'🟤', t:'frac',  q:3,    u:'tbsp', name:'tamarind paste',              sub:'',                     cal:25,   key:'tamarind' },
+      { icon:'🧅', t:'count', q:3,    u:'',     name:'onions, finely chopped',      sub:'',                     cal:132,  key:'onion' },
+      { icon:'🍅', t:'count', q:2,    u:'',     name:'tomatoes, chopped',           sub:'',                     cal:44,   key:'tomato' },
+      { icon:'🧄', t:'count', q:8,    u:'',     name:'garlic cloves',               sub:'',                     cal:32,   key:'garlic' },
+      { icon:'🫚', t:'frac',  q:2,    u:'inch', name:'ginger',                      sub:'',                     cal:10,   key:'ginger' },
+      { icon:'🌶️',t:'frac',  q:2,    u:'tsp',  name:'red chilli powder',           sub:'',                     cal:12,   key:'red-chilli' },
+      { icon:'🟡', t:'frac',  q:1,    u:'tsp',  name:'turmeric powder',             sub:'',                     cal:8,    key:'turmeric' },
+      { icon:'🟤', t:'frac',  q:2,    u:'tsp',  name:'coriander powder',            sub:'',                     cal:12,   key:'coriander' },
+      { icon:'✨', t:'frac',  q:2,    u:'tsp',  name:'garam masala',                sub:'',                     cal:16,   key:'garam-masala' },
+      { icon:'🌿', t:'range', low:10, high:12, u:'', name:'curry leaves',           sub:'',                     cal:2,    key:'curry-leaves' },
+      { icon:'🫗', t:'frac',  q:4,    u:'tbsp', name:'oil',                         sub:'',                     cal:480,  key:'oil' },
+      { icon:'🧂', t:'taste', text:'', name:'salt, to taste', sub:'', cal:0, key:'salt' },
+    ],
+    method: [
+      { title:'FRY THE CHICKEN', body:'Heat oil in a wide heavy pot. Fry chicken pieces on high heat until golden and slightly crisped on the outside. Remove and set aside. This step is essential — it adds depth.' },
+      { title:'COOK THE BASE',   body:'In the same oil, fry onions until deep brown (not golden — deep brown). Add ginger-garlic and cook 3 minutes. Add tomatoes and all dry spices. Cook until oil separates.' },
+      { title:'ADD TAMARIND',    body:'Add tamarind paste and 1 cup water. Bring to a boil. The gravy will turn a deep mahogany colour.' },
+      { title:'SLOW COOK',       body:'Return the chicken and add curry leaves. Cover and simmer on very low heat for 35–40 minutes, stirring occasionally. Country chicken needs time — don\'t rush it.' },
+      { title:'REDUCE & FINISH', body:'Uncover for the final 10 minutes to reduce the gravy to a thick, clinging consistency. Taste and adjust salt and tamarind.' },
+    ],
+    goodness: ['Very high in protein','Country chicken is leaner','Deep authentic flavour','Collagen-rich from bone-in cooking'],
+    serveWith: [{ icon:'🍚', label:'Hot Rice' }, { icon:'🫓', label:'Jowar Roti' }, { icon:'🧅', label:'Raw Onion & Lemon' }],
+    tip: 'Country chicken (natu kodi) is tougher than broiler — that\'s why the long slow cook is non-negotiable. Pressure cooking defeats the purpose; the slow simmer builds a depth that can\'t be rushed.',
+    tags: ['High-protein', 'Gluten-free'],
+  },
+  {
+    id: 'gutti-vankaya',
+    title: 'Gutti Vankaya',
+    script: 'Stuffed & Spectacular',
+    badge: 'ANDHRA STUFFED BRINJAL',
+    blurb: 'Small brinjals stuffed with a peanut-sesame masala and slow-cooked — rich, nutty and deeply Andhra!',
+    readyMins: 40,
+    baseServings: 4,
+    heroEmoji: '🍆',
+    ingredients: [
+      { icon:'🍆', t:'count', q:8,    u:'',     name:'small brinjals (eggplant)',   sub:'(kept whole with stem)', cal:160, key:'brinjal' },
+      { icon:'🥜', t:'frac',  q:3,    u:'tbsp', name:'peanuts, roasted',            sub:'',                      cal:150,  key:'peanuts' },
+      { icon:'⬜', t:'frac',  q:2,    u:'tbsp', name:'white sesame seeds, roasted', sub:'',                      cal:100,  key:'sesame' },
+      { icon:'🥥', t:'frac',  q:2,    u:'tbsp', name:'desiccated coconut, roasted', sub:'',                      cal:70,   key:'coconut' },
+      { icon:'🌶️',t:'frac',  q:1.5,  u:'tsp',  name:'red chilli powder',           sub:'',                      cal:9,    key:'red-chilli' },
+      { icon:'🟡', t:'frac',  q:1,    u:'tsp',  name:'coriander powder',            sub:'',                      cal:6,    key:'coriander' },
+      { icon:'✨', t:'frac',  q:0.5,  u:'tsp',  name:'garam masala',                sub:'',                      cal:4,    key:'garam-masala' },
+      { icon:'🟡', t:'frac',  q:0.5,  u:'tsp',  name:'turmeric powder',             sub:'',                      cal:4,    key:'turmeric' },
+      { icon:'🫗', t:'frac',  q:4,    u:'tbsp', name:'oil',                         sub:'',                      cal:480,  key:'oil' },
+      { icon:'🟤', t:'frac',  q:1,    u:'tsp',  name:'tamarind paste',              sub:'',                      cal:5,    key:'tamarind' },
+      { icon:'🧂', t:'taste', text:'', name:'salt, to taste', sub:'', cal:0, key:'salt' },
+    ],
+    method: [
+      { title:'MAKE THE FILLING', body:'Blend roasted peanuts, sesame, coconut, chilli powder, coriander, garam masala, turmeric, tamarind, and salt into a coarse paste — not too smooth. Taste and adjust.' },
+      { title:'STUFF THE BRINJALS', body:'Make two deep cross-cuts from the base of each brinjal (keeping the stem intact). Gently stuff the masala paste into each opening, pressing firmly.' },
+      { title:'SHALLOW FRY',     body:'Heat oil in a wide pan. Place stuffed brinjals gently. Cook on medium-low with a lid on, turning every few minutes, for 15–18 minutes total.' },
+      { title:'FINISH',          body:'Once brinjals are completely tender (press with a spoon — they should yield), increase heat briefly to caramelise the outside. Serve hot.' },
+    ],
+    goodness: ['Peanuts add protein','Rich in fibre','Sesame calcium boost','Vegan & gluten-free'],
+    serveWith: [{ icon:'🍚', label:'Hot Rice' }, { icon:'🫙', label:'Ghee' }, { icon:'🟡', label:'Pappu' }],
+    tip: 'Choose brinjals of uniform small size — they cook evenly. If the filling falls out while cooking, just pile it alongside the brinjals in the pan.',
+    tags: ['Vegan', 'Gluten-free', 'High-fibre'],
+  },
+  {
+    id: 'egg-curry',
+    title: 'Egg Curry',
+    script: 'Simple & Satisfying',
+    badge: 'ANDHRA STYLE',
+    blurb: 'Hard-boiled eggs in a bold, spiced onion-tomato gravy — a quick, protein-rich meal that never disappoints!',
+    readyMins: 25,
+    baseServings: 4,
+    heroEmoji: '🥚',
+    ingredients: [
+      { icon:'🥚', t:'count', q:6,    u:'',     name:'eggs, hard-boiled & peeled',  sub:'',                cal:468,  key:'eggs' },
+      { icon:'🧅', t:'count', q:2,    u:'',     name:'onions, finely chopped',      sub:'',                cal:88,   key:'onion' },
+      { icon:'🍅', t:'count', q:2,    u:'',     name:'tomatoes, pureed',            sub:'',                cal:44,   key:'tomato' },
+      { icon:'🧄', t:'count', q:5,    u:'',     name:'garlic cloves, minced',       sub:'',                cal:20,   key:'garlic' },
+      { icon:'🫚', t:'frac',  q:1,    u:'inch', name:'ginger, grated',              sub:'',                cal:5,    key:'ginger' },
+      { icon:'🌶️',t:'frac',  q:1.5,  u:'tsp',  name:'red chilli powder',           sub:'',                cal:9,    key:'red-chilli' },
+      { icon:'🟡', t:'frac',  q:0.5,  u:'tsp',  name:'turmeric powder',             sub:'',                cal:4,    key:'turmeric' },
+      { icon:'🟤', t:'frac',  q:1,    u:'tsp',  name:'coriander powder',            sub:'',                cal:6,    key:'coriander' },
+      { icon:'✨', t:'frac',  q:1,    u:'tsp',  name:'garam masala',                sub:'',                cal:8,    key:'garam-masala' },
+      { icon:'🫗', t:'frac',  q:3,    u:'tbsp', name:'oil',                         sub:'',                cal:360,  key:'oil' },
+      { icon:'🌿', t:'range', low:8, high:10, u:'', name:'curry leaves',            sub:'',                cal:2,    key:'curry-leaves' },
+      { icon:'🧂', t:'taste', text:'', name:'salt, to taste', sub:'', cal:0, key:'salt' },
+      { icon:'🌱', t:'frac',  q:2,    u:'tbsp', name:'fresh coriander',             sub:'',                cal:1,    key:'coriander' },
+    ],
+    method: [
+      { title:'FRY THE EGGS',    body:'Score the hard-boiled eggs with shallow cuts or prick with a fork. Shallow fry in hot oil for 2–3 minutes until lightly golden. This gives them flavour and texture. Remove and set aside.' },
+      { title:'BUILD THE MASALA',body:'In the same oil, add onions and fry until deep golden. Add ginger-garlic and cook 2 minutes. Add tomato puree, all dry spices, and salt.' },
+      { title:'COOK THE GRAVY',  body:'Cook the masala until oil separates, about 8–10 minutes. Add ½ cup water and curry leaves. Simmer 3 minutes.' },
+      { title:'ADD EGGS',        body:'Slide in the fried eggs. Coat gently in the gravy. Simmer on low for 5 minutes so the eggs absorb the flavour.' },
+      { title:'FINISH',          body:'Sprinkle garam masala and fresh coriander. Serve hot.' },
+    ],
+    goodness: ['Complete protein','Quick to make','Budget-friendly','Rich in B12 & choline'],
+    serveWith: [{ icon:'🍚', label:'Hot Rice' }, { icon:'🫓', label:'Roti' }, { icon:'🥗', label:'Onion Salad' }],
+    tip: 'Frying the boiled eggs before adding to the gravy is the most important step — it creates a golden skin that soaks up the masala without becoming rubbery.',
+    tags: ['High-protein', 'Gluten-free'],
+  },
+
+  /* ── More Rasoi Magic ───────────────────────────── */
+  {
+    id: 'rasoi-dal-makhani',
+    title: 'Rasoi Magic Dal Makhani',
+    script: 'Creamy, Smoky & Rich',
+    badge: 'RASOI MAGIC SERIES',
+    blurb: 'The legendary dal makhani made easy — whole black lentils slow-cooked with butter and cream from a single packet!',
+    readyMins: 40,
+    baseServings: 4,
+    heroEmoji: '🫕',
+    ingredients: [
+      { icon:'⚫', t:'frac',  q:1,    u:'cup',  name:'whole black urad dal',        sub:'(soaked overnight)', cal:380, key:'urad-dal' },
+      { icon:'🫘', t:'frac',  q:0.25, u:'cup',  name:'rajma (kidney beans)',         sub:'(soaked overnight)', cal:112, key:'rajma' },
+      { icon:'📦', t:'count', q:1,    u:'',     name:'Rasoi Magic Dal Makhani packet', sub:'(50g)',           cal:60,  key:'masala' },
+      { icon:'🧈', t:'frac',  q:3,    u:'tbsp', name:'butter',                       sub:'',                  cal:300, key:'butter' },
+      { icon:'🥛', t:'frac',  q:75,   u:'ml',   name:'heavy cream',                  sub:'',                  cal:260, key:'cream' },
+      { icon:'🍅', t:'frac',  q:2,    u:'tbsp', name:'tomato paste',                 sub:'',                  cal:20,  key:'tomato' },
+      { icon:'🧂', t:'taste', text:'', name:'salt, to taste', sub:'', cal:0, key:'salt' },
+    ],
+    method: [
+      { title:'PRESSURE COOK',   body:'Pressure cook soaked dal and rajma together with 3 cups water for 6–7 whistles until completely soft. The dal should mash between fingers easily.' },
+      { title:'COOK THE BASE',   body:'Melt butter in a thick pot. Add tomato paste and the full Rasoi Magic packet. Stir and cook on medium heat for 4 minutes.' },
+      { title:'COMBINE & SIMMER', body:'Add the cooked dal and rajma. Stir well. Simmer on low heat for 20 minutes minimum — the longer it simmers, the richer it gets. Add water if too thick.' },
+      { title:'FINISH',          body:'Stir in cream. Simmer 3 more minutes. Dal makhani is done when it\'s deep brown, creamy, and the butter glistens on top.' },
+    ],
+    goodness: ['High in protein','Rich in iron','Prebiotic dal','Deeply satisfying'],
+    serveWith: [{ icon:'🫓', label:'Butter Naan' }, { icon:'🍚', label:'Jeera Rice' }, { icon:'🧅', label:'Pickled Onion' }],
+    tip: 'The minimum simmer is 20 minutes — every extra 10 minutes makes it richer. Restaurant dal makhani simmers for hours. Patience is the upgrade.',
+    tags: ['Vegetarian', 'High-protein', 'High-fibre'],
+  },
+  {
+    id: 'rasoi-pav-bhaji',
+    title: 'Rasoi Magic Pav Bhaji',
+    script: 'Mumbai Street Magic',
+    badge: 'RASOI MAGIC SERIES',
+    blurb: 'Buttery mashed vegetable curry with toasted pav — Mumbai\'s iconic street food made in your own kitchen!',
+    readyMins: 30,
+    baseServings: 4,
+    heroEmoji: '🍞',
+    ingredients: [
+      { icon:'🥔', t:'frac',  q:400,  u:'g',    name:'potatoes, boiled & mashed',   sub:'',                cal:308, key:'potato' },
+      { icon:'🥦', t:'frac',  q:1,    u:'cup',  name:'mixed vegetables, boiled',    sub:'(peas, carrot, cauliflower)', cal:80, key:'carrot' },
+      { icon:'📦', t:'count', q:1,    u:'',     name:'Rasoi Magic Pav Bhaji packet', sub:'(50g)',           cal:60,  key:'masala' },
+      { icon:'🧅', t:'count', q:2,    u:'',     name:'onions, finely chopped',      sub:'(½ for bhaji, ½ for serving)', cal:88, key:'onion' },
+      { icon:'🍅', t:'count', q:3,    u:'',     name:'tomatoes, finely chopped',    sub:'',                cal:66,  key:'tomato' },
+      { icon:'🧈', t:'frac',  q:4,    u:'tbsp', name:'butter',                      sub:'(divided)',        cal:400, key:'butter' },
+      { icon:'🫗', t:'frac',  q:1,    u:'tbsp', name:'oil',                         sub:'',                cal:120, key:'oil' },
+      { icon:'🍞', t:'count', q:8,    u:'',     name:'pav (dinner rolls)',           sub:'',                cal:560, key:'bread' },
+      { icon:'🍋', t:'frac',  q:1,    u:'',     name:'lemon, cut into wedges',      sub:'',                cal:5,   key:'lemon' },
+      { icon:'🧂', t:'taste', text:'', name:'salt, to taste', sub:'', cal:0, key:'salt' },
+    ],
+    method: [
+      { title:'COOK THE BHAJI',  body:'Heat butter + oil in a thick pan. Sauté onions until golden. Add tomatoes and cook until soft. Add the Rasoi Magic packet and cook 3 minutes.' },
+      { title:'MASH IT IN',      body:'Add mashed potatoes and mixed vegetables. Using a potato masher, mash everything together in the pan. Add ½ cup water. Stir vigorously.' },
+      { title:'SIMMER & TASTE',  body:'Simmer on medium heat, mashing and stirring, for 8–10 minutes until the bhaji is thick and glossy. Add salt and a knob of butter.' },
+      { title:'TOAST THE PAV',   body:'Slice pav. Butter both cut sides generously. Toast on a hot tawa until golden and slightly crisp at the edges.' },
+      { title:'SERVE',           body:'Serve bhaji in a bowl with a knob of butter melting on top, chopped onion, and lemon wedge. Toasted pav on the side.' },
+    ],
+    goodness: ['Packed with vegetables','Energy-rich','Quick weeknight dish','Kid-friendly'],
+    serveWith: [{ icon:'🧅', label:'Raw Onion' }, { icon:'🍋', label:'Lemon Wedge' }, { icon:'🌿', label:'Coriander' }],
+    tip: 'The bhaji should be mashed until almost smooth — no big chunks. And don\'t skip toasting the pav in butter. A cold pav is a tragedy.',
+    tags: ['Vegetarian', 'High-carb'],
+  },
+  {
+    id: 'rasoi-kadai-paneer',
+    title: 'Rasoi Magic Kadai Paneer',
+    script: 'Smoky & Restaurant-Style',
+    badge: 'RASOI MAGIC SERIES',
+    blurb: 'Chunky paneer and peppers tossed in a bold kadhai masala — restaurant quality from a single packet!',
+    readyMins: 25,
+    baseServings: 4,
+    heroEmoji: '🍢',
+    ingredients: [
+      { icon:'🧀', t:'frac',  q:300,  u:'g',    name:'paneer, cubed',               sub:'',                cal:816, key:'paneer' },
+      { icon:'📦', t:'count', q:1,    u:'',     name:'Rasoi Magic Kadai Paneer packet', sub:'(50g)',        cal:60,  key:'masala' },
+      { icon:'🫑', t:'count', q:1,    u:'',     name:'green capsicum, cubed',        sub:'',                cal:25,  key:'capsicum' },
+      { icon:'🔴', t:'count', q:1,    u:'',     name:'red capsicum, cubed',          sub:'',                cal:30,  key:'capsicum' },
+      { icon:'🧅', t:'count', q:2,    u:'',     name:'onions — 1 chopped, 1 cubed',  sub:'',                cal:88,  key:'onion' },
+      { icon:'🍅', t:'count', q:3,    u:'',     name:'tomatoes, chopped',            sub:'',                cal:66,  key:'tomato' },
+      { icon:'🫗', t:'frac',  q:3,    u:'tbsp', name:'oil',                          sub:'',                cal:360, key:'oil' },
+      { icon:'🥛', t:'frac',  q:50,   u:'ml',   name:'cream',                        sub:'(optional)',      cal:173, key:'cream' },
+      { icon:'🧂', t:'taste', text:'', name:'salt, to taste', sub:'', cal:0, key:'salt' },
+    ],
+    method: [
+      { title:'COOK THE GRAVY',  body:'Heat oil. Sauté the chopped onion until golden. Add tomatoes and cook until soft. Add the full Rasoi Magic packet. Cook 4 minutes until fragrant.' },
+      { title:'ADD PEPPERS',     body:'Add the cubed capsicum and cubed onion. Toss on high heat for 3 minutes — keep them slightly crunchy.' },
+      { title:'ADD PANEER',      body:'Add paneer cubes. Toss gently to coat in the masala. Cook on medium heat 5 minutes.' },
+      { title:'FINISH',          body:'Stir in cream if using. Simmer 2 minutes. Serve sizzling hot — kadai paneer is best straight from the pan.' },
+    ],
+    goodness: ['High in protein','Vitamin C from peppers','Quick to make','Calcium-rich paneer'],
+    serveWith: [{ icon:'🫓', label:'Butter Naan' }, { icon:'🍚', label:'Jeera Rice' }, { icon:'🧅', label:'Laccha Onion' }],
+    tip: 'Keep the capsicum slightly crunchy — overcooked peppers turn limp and lose the texture contrast that defines kadai paneer.',
+    tags: ['Vegetarian', 'Protein-rich'],
+  },
 ];
 
 /* ── Global state ───────────────────────────────────────────────── */
@@ -1075,6 +1343,10 @@ function saveServings() {
 
 /* ── Admin mode (add ?admin=1 to URL) ──────────────────────────── */
 const isAdmin = new URLSearchParams(location.search).get('admin') === '1';
+if (isAdmin) {
+  const banner = document.getElementById('adminBanner');
+  if (banner) banner.style.display = 'block';
+}
 
 /* ── Admin photo upload ─────────────────────────────────────────── */
 function attachAdminUpload(recipe) {
@@ -1152,7 +1424,7 @@ function buildFlyer(recipe) {
         <b id="iq-${i}">${ing.qty || ''}</b>${ing.qty ? ' ' : ''}${ing.name}
         ${ing.sub ? `<span class="ing-sub">${ing.sub}</span>` : ''}
       </span>
-      <span class="ing-cal" id="ic-${i}">${ing.cal > 0 ? ing.cal + ' kcal' : ''}</span>
+      <span class="ing-cal" id="ic-${i}">${ing.cal > 0 ? ing.cal + ' cal' : ''}</span>
     </li>`).join('');
 
   const methodSteps = recipe.method.map((s, i) => `
@@ -1236,8 +1508,8 @@ function buildFlyer(recipe) {
       </div>
 
       <div class="cal-summary">
-        <div class="cal-total"><span id="totalCal">${totalCal}</span> <span class="cal-unit">kcal</span></div>
-        <div class="cal-sub">whole cooked ${recipe.title} · <b id="perServing">${perServing}</b> kcal per serving</div>
+        <div class="cal-total"><span id="totalCal">${totalCal}</span> <span class="cal-unit">calories</span></div>
+        <div class="cal-sub">whole cooked ${recipe.title} · <b id="perServing">${perServing}</b> cal per serving</div>
       </div>
 
       <div class="calc-note">Measurements & calories scale automatically · each child counts as ½ an adult portion.</div>
@@ -1292,7 +1564,7 @@ function updateScaling(recipe) {
     const iqEl = document.getElementById(`iq-${i}`);
     const icEl = document.getElementById(`ic-${i}`);
     if (iqEl) iqEl.textContent = ing.qty || '';
-    if (icEl) icEl.textContent = ing.cal > 0 ? ing.cal + ' kcal' : '';
+    if (icEl) icEl.textContent = ing.cal > 0 ? ing.cal + ' cal' : '';
   });
 
   document.getElementById('inAdults').value   = adults;
@@ -1480,6 +1752,136 @@ document.getElementById('aiSend').addEventListener('click', handleAiSend);
 document.getElementById('aiInput').addEventListener('keydown', e => {
   if (e.key === 'Enter') handleAiSend();
 });
+
+/* ── Recipe search ──────────────────────────────────────────────── */
+const searchInput   = document.getElementById('searchInput');
+const searchResults = document.getElementById('searchResults');
+
+function scoreRecipe(recipe, query) {
+  const q = query.toLowerCase().trim();
+  if (!q) return 1;
+  const haystack = [
+    recipe.title,
+    recipe.script,
+    recipe.badge,
+    recipe.blurb,
+    ...(recipe.tags || []),
+    ...recipe.ingredients.map(i => i.name + ' ' + (i.key || '')),
+  ].join(' ').toLowerCase();
+  const words = q.split(/\s+/);
+  const matched = words.filter(w => haystack.includes(w)).length;
+  return matched / words.length;
+}
+
+function renderSearchResults(query) {
+  const q = query.trim();
+  const scored = recipes
+    .map((r, i) => ({ r, i, score: q ? scoreRecipe(r, q) : 1 }))
+    .filter(x => x.score > 0)
+    .sort((a, b) => b.score - a.score);
+
+  if (!scored.length) {
+    searchResults.innerHTML = `<div class="search-empty">No recipes found for "${q}"</div>`;
+    return;
+  }
+
+  searchResults.innerHTML = scored.map(({ r, i }) => {
+    const tagPills = (r.tags || []).map(t =>
+      `<span class="diet-tag" data-cat="${tagCat(t)}">${t}</span>`
+    ).join('');
+    return `
+      <div class="search-result-item" data-idx="${i}">
+        <span class="search-result-emoji">${r.heroEmoji}</span>
+        <div class="search-result-info">
+          <div class="search-result-name">${r.title}</div>
+          <div class="search-result-meta">${r.readyMins} min · ${r.badge}</div>
+          ${tagPills ? `<div class="search-result-tags">${tagPills}</div>` : ''}
+        </div>
+      </div>`;
+  }).join('');
+
+  searchResults.querySelectorAll('.search-result-item').forEach(el => {
+    el.addEventListener('click', () => {
+      currentIndex = parseInt(el.dataset.idx, 10);
+      renderFlyer(currentIndex, true);
+      closeSearch();
+    });
+  });
+}
+
+function openSearch() {
+  renderSearchResults(searchInput.value);
+  searchResults.classList.add('open');
+}
+
+function closeSearch() {
+  searchResults.classList.remove('open');
+}
+
+searchInput.addEventListener('focus', openSearch);
+searchInput.addEventListener('input', () => { renderSearchResults(searchInput.value); searchResults.classList.add('open'); });
+searchInput.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { closeSearch(); searchInput.blur(); }
+  if (e.key === 'Enter') {
+    const first = searchResults.querySelector('.search-result-item');
+    if (first) first.click();
+  }
+});
+document.addEventListener('click', e => {
+  if (!document.getElementById('headerSearchWrap').contains(e.target)) closeSearch();
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'k' && (e.metaKey || e.ctrlKey)) { e.preventDefault(); searchInput.focus(); }
+});
+
+/* ── Typewriter placeholder ─────────────────────────────────────── */
+const searchPhrases = [
+  'Search something spicy…',
+  'Search something quick & easy…',
+  'Search a vegan meal…',
+  'Search something for Sunday brunch…',
+  'Search a high-protein dish…',
+  'Search something diabetic-friendly…',
+  'Search a South Indian classic…',
+  'Search something under 20 minutes…',
+  'Search a dal for tonight…',
+  'Search something hearty & filling…',
+  'Search a Rasoi Magic recipe…',
+  'Search something gluten-free…',
+  'Search a dish with paneer…',
+  'Search something for the kids…',
+  'Search a comfort bowl…',
+  'Try something different today',
+];
+
+let phraseIdx  = 0;
+let charIdx    = 0;
+let twTimer    = null;
+const TYPE_MS  = 62;
+const PAUSE_MS = 1900;
+
+function typeStep() {
+  if (document.activeElement === searchInput || searchInput.value) return;
+  const phrase = searchPhrases[phraseIdx];
+  searchInput.placeholder = phrase.slice(0, charIdx);
+  if (charIdx < phrase.length) {
+    charIdx++;
+    twTimer = setTimeout(typeStep, TYPE_MS);
+  } else {
+    twTimer = setTimeout(() => {
+      phraseIdx = (phraseIdx + 1) % searchPhrases.length;
+      charIdx   = 0;
+      typeStep();
+    }, PAUSE_MS);
+  }
+}
+
+searchInput.addEventListener('focus', () => clearTimeout(twTimer));
+searchInput.addEventListener('blur',  () => {
+  if (!searchInput.value) { charIdx = 0; typeStep(); }
+});
+
+typeStep();
 
 /* ── Init ───────────────────────────────────────────────────────── */
 renderFlyer(0, false);

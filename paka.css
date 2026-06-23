@@ -19,12 +19,16 @@ body {
 /* ── App header ──────────────────────────────────── */
 .app-header {
   width: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
+  gap: 20px;
   padding: 14px 32px;
   flex-shrink: 0;
 }
+
+.app-logo { justify-self: start; }
+.app-tagline { justify-self: end; }
 
 .app-logo {
   display: flex;
@@ -43,6 +47,86 @@ body {
   justify-content: center;
   box-shadow: 0 4px 12px rgba(20,50,15,0.35);
   flex-shrink: 0;
+}
+
+/* ── Header search bar ───────────────────────────── */
+.header-search-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.18);
+  border: 2px solid rgba(247,207,63,0.45);
+  border-radius: 30px;
+  padding: 0 16px;
+  height: 40px;
+  width: 340px;
+  transition: background 0.2s, border-color 0.2s;
+}
+.header-search-wrap:focus-within {
+  background: rgba(255,255,255,0.28);
+  border-color: #f7cf3f;
+}
+
+.header-search-icon {
+  font-size: 15px;
+  margin-right: 8px;
+  opacity: 0.8;
+  flex-shrink: 0;
+}
+
+.header-search-input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fbf3d3;
+  min-width: 0;
+}
+.header-search-input::placeholder { color: rgba(251,243,211,0.55); }
+
+/* ── Search dropdown ─────────────────────────────── */
+.search-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: #fbf3d3;
+  border-radius: 16px;
+  box-shadow: 0 16px 48px rgba(10,30,10,0.45);
+  max-height: 420px;
+  overflow-y: auto;
+  z-index: 300;
+  padding: 8px;
+}
+.search-dropdown.open { display: block; }
+
+.search-result-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+.search-result-item:hover, .search-result-item.active { background: #f0e8b8; }
+
+.search-result-emoji { font-size: 24px; flex-shrink: 0; }
+.search-result-info  { flex: 1; min-width: 0; }
+.search-result-name  { font-weight: 800; font-size: 14px; color: #1f5a22; }
+.search-result-meta  { font-size: 11px; color: #5a7a2c; font-weight: 600; margin-top: 1px; }
+.search-result-tags  { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+
+.search-empty {
+  text-align: center;
+  color: #7a8a4c;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 20px 0;
 }
 
 .logo-wordmark {
@@ -206,6 +290,19 @@ body {
 .diet-tag[data-cat="diet"]      { background: #d4edda; color: #1a5c28; border: 1.5px solid #8db83f; }
 .diet-tag[data-cat="health"]    { background: #d6eaf8; color: #1a4a6e; border: 1.5px solid #5b9bd5; }
 .diet-tag[data-cat="nutrition"] { background: #fdebd0; color: #7b3f00; border: 1.5px solid #e8a87c; }
+
+/* ── Admin banner ────────────────────────────────── */
+.admin-banner {
+  width: 100%;
+  background: #1f5a22;
+  color: #f7cf3f;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-align: center;
+  padding: 6px 16px;
+  border-bottom: 2px dashed #f7cf3f;
+}
 
 /* ── Admin hero upload overlay ───────────────────── */
 .admin-upload-btn {

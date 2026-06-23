@@ -28,6 +28,15 @@
       </div>
       <span class="logo-wordmark">Pāka</span>
     </div>
+
+    <div class="header-search-wrap" id="headerSearchWrap">
+      <span class="header-search-icon">🔍</span>
+      <input class="header-search-input" id="searchInput" type="text"
+             placeholder="Search recipes, tags, ingredients…"
+             autocomplete="off" autocorrect="off" spellcheck="false">
+      <div class="search-dropdown" id="searchResults"></div>
+    </div>
+
     <span class="app-tagline">Try Something Different Today</span>
   </header>
 
@@ -53,6 +62,11 @@
   </main>
 
   <p class="recipe-counter" id="recipeCounter"></p>
+
+  <!-- Admin mode banner -->
+  <div class="admin-banner" id="adminBanner" style="display:none">
+    🔐 Admin Mode — <span id="adminRecipeName"></span>
+  </div>
 
   <!-- Suggest a recipe button -->
   <button class="suggest-pill" id="suggestBtn">💡 Suggest a Recipe</button>
