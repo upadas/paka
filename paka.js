@@ -1341,6 +1341,24 @@ function saveServings() {
   try { localStorage.setItem('paka.servings', JSON.stringify({ adults, children })); } catch (e) {}
 }
 
+/* ── Reaction storage helpers ───────────────────────────────────── */
+function loadStats() {
+  try { return JSON.parse(localStorage.getItem('paka.stats') || '{}'); } catch(e) { return {}; }
+}
+function saveStats(stats) {
+  try { localStorage.setItem('paka.stats', JSON.stringify(stats)); } catch(e) {}
+}
+function getRecipeStats(id) {
+  const s = loadStats();
+  return s[id] || { likes: 0, loves: 0, saves: 0 };
+}
+function loadSet(key) {
+  try { return new Set(JSON.parse(localStorage.getItem(key) || '[]')); } catch(e) { return new Set(); }
+}
+function saveSet(key, set) {
+  try { localStorage.setItem(key, JSON.stringify([...set])); } catch(e) {}
+}
+
 /* ── Admin mode (add ?admin=1 to URL) ──────────────────────────── */
 const isAdmin = new URLSearchParams(location.search).get('admin') === '1';
 if (isAdmin) {
@@ -1456,6 +1474,23 @@ function buildFlyer(recipe) {
     ? `<img class="hero-img" src="${storedPhoto || recipe.heroSrc}" alt="${recipe.title}">`
     : `<div class="hero-placeholder">${recipe.heroEmoji}</div>`;
 
+  const rStats  = getRecipeStats(recipe.id);
+  const myLikes = loadSet('paka.myLikes');
+  const myLoves = loadSet('paka.myLoves');
+  const mySaves = loadSet('paka.mySaves');
+  const likePanelHtml = `
+    <div class="like-panel">
+      <button class="like-btn${myLikes.has(recipe.id) ? ' active' : ''}" id="likeBtn">
+        👍 <span id="likeCnt">${rStats.likes}</span>
+      </button>
+      <button class="like-btn${myLoves.has(recipe.id) ? ' active' : ''}" id="loveBtn">
+        ❤️ <span id="loveCnt">${rStats.loves}</span>
+      </button>
+      <button class="like-btn save-btn${mySaves.has(recipe.id) ? ' active' : ''}" id="saveBtn">
+        🔖 ${mySaves.has(recipe.id) ? 'Saved!' : 'Save'}
+      </button>
+    </div>`;
+
   return `
     <div class="leaf leaf1">🌿</div>
     <div class="leaf leaf2">🌿</div>
@@ -1485,6 +1520,8 @@ function buildFlyer(recipe) {
         </div>
       </div>
     </div>
+
+    ${likePanelHtml}
 
     <div class="calc-box">
       <div class="cooking-for">Cooking<br>for?</div>
@@ -1594,9 +1631,63 @@ function attachCalcListeners(recipe) {
   };
 
   attachAdminUpload(recipe);
+  attachLikeListeners(recipe);
 
   const qrBtn = document.getElementById('qrBtn');
   if (qrBtn) qrBtn.addEventListener('click', () => showQr(recipe));
+}
+
+/* ── Like / Love / Save listeners ───────────────────────────────── */
+function toggleReaction(field, setKey, countId, btn, recipe) {
+  const set   = loadSet(setKey);
+  const stats = loadStats();
+  if (!stats[recipe.id]) stats[recipe.id] = { likes: 0, loves: 0, saves: 0 };
+
+  if (set.has(recipe.id)) {
+    set.delete(recipe.id);
+    stats[recipe.id][field] = Math.max(0, (stats[recipe.id][field] || 0) - 1);
+    btn.classList.remove('active');
+  } else {
+    set.add(recipe.id);
+    stats[recipe.id][field] = (stats[recipe.id][field] || 0) + 1;
+    btn.classList.add('active');
+  }
+  saveSet(setKey, set);
+  saveStats(stats);
+  const el = document.getElementById(countId);
+  if (el) el.textContent = stats[recipe.id][field];
+  renderTrending();
+}
+
+function toggleSave(recipe, btn) {
+  const set   = loadSet('paka.mySaves');
+  const stats = loadStats();
+  if (!stats[recipe.id]) stats[recipe.id] = { likes: 0, loves: 0, saves: 0 };
+
+  if (set.has(recipe.id)) {
+    set.delete(recipe.id);
+    stats[recipe.id].saves = Math.max(0, (stats[recipe.id].saves || 0) - 1);
+    btn.classList.remove('active');
+    btn.textContent = '🔖 Save';
+  } else {
+    set.add(recipe.id);
+    stats[recipe.id].saves = (stats[recipe.id].saves || 0) + 1;
+    btn.classList.add('active');
+    btn.textContent = '🔖 Saved!';
+  }
+  saveSet('paka.mySaves', set);
+  saveStats(stats);
+  renderSaved();
+  renderTrending();
+}
+
+function attachLikeListeners(recipe) {
+  const likeBtn = document.getElementById('likeBtn');
+  const loveBtn = document.getElementById('loveBtn');
+  const saveBtn = document.getElementById('saveBtn');
+  if (likeBtn) likeBtn.onclick = () => toggleReaction('likes', 'paka.myLikes', 'likeCnt', likeBtn, recipe);
+  if (loveBtn) loveBtn.onclick = () => toggleReaction('loves', 'paka.myLoves', 'loveCnt', loveBtn, recipe);
+  if (saveBtn) saveBtn.onclick = () => toggleSave(recipe, saveBtn);
 }
 
 /* ── Render flyer into DOM ──────────────────────────────────────── */
@@ -1883,5 +1974,57 @@ searchInput.addEventListener('blur',  () => {
 
 typeStep();
 
+/* ── Trending & Saved panels ────────────────────────────────────── */
+function renderTrending() {
+  const list = document.getElementById('trendingList');
+  if (!list) return;
+  const stats = loadStats();
+  const scored = recipes
+    .map(r => ({ r, score: ((stats[r.id] || {}).likes || 0) + ((stats[r.id] || {}).loves || 0) * 2 + ((stats[r.id] || {}).saves || 0) * 3 }))
+    .filter(x => x.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 7);
+
+  if (!scored.length) {
+    list.innerHTML = '<li class="tile-empty">Like or save a recipe to see it here!</li>';
+    return;
+  }
+  list.innerHTML = scored.map(({ r, score }) => {
+    const idx = recipes.indexOf(r);
+    return `<li class="tile-item" data-idx="${idx}">
+      <span class="tile-emoji">${r.heroEmoji}</span>
+      <span class="tile-name">${r.title}</span>
+      <span class="tile-score">${score}</span>
+    </li>`;
+  }).join('');
+  list.querySelectorAll('.tile-item').forEach(li => {
+    li.addEventListener('click', () => { currentIdx = +li.dataset.idx; renderFlyer(currentIdx, true); });
+  });
+}
+
+function renderSaved() {
+  const list = document.getElementById('savedList');
+  if (!list) return;
+  const mySaves = loadSet('paka.mySaves');
+  const saved = recipes.filter(r => mySaves.has(r.id));
+
+  if (!saved.length) {
+    list.innerHTML = '<li class="tile-empty">Tap 🔖 on a recipe to save it here!</li>';
+    return;
+  }
+  list.innerHTML = saved.map(r => {
+    const idx = recipes.indexOf(r);
+    return `<li class="tile-item" data-idx="${idx}">
+      <span class="tile-emoji">${r.heroEmoji}</span>
+      <span class="tile-name">${r.title}</span>
+    </li>`;
+  }).join('');
+  list.querySelectorAll('.tile-item').forEach(li => {
+    li.addEventListener('click', () => { currentIdx = +li.dataset.idx; renderFlyer(currentIdx, true); });
+  });
+}
+
 /* ── Init ───────────────────────────────────────────────────────── */
 renderFlyer(0, false);
+renderTrending();
+renderSaved();
