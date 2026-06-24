@@ -54,7 +54,6 @@ const recipes = [
     readyMins: 15,
     baseServings: 2,
     heroEmoji: '🍚',
-    heroSrc: 'https://upload.wikimedia.org/wikipedia/commons/8/80/Poha.jpg',
     ingredients: [
       { icon:'🍚', t:'frac',  q:1.5,  u:'cups',  name:'thick poha',           sub:'(flattened rice)', cal:330, key:'poha' },
       { icon:'🧅', t:'frac',  q:1,    u:'medium', name:'onion, finely chopped', sub:'',               cal:44,  key:'onion' },
@@ -92,7 +91,6 @@ const recipes = [
     readyMins: 20,
     baseServings: 2,
     heroEmoji: '🫕',
-    heroSrc: 'https://upload.wikimedia.org/wikipedia/commons/8/86/A_photo_of_Upma.jpg',
     ingredients: [
       { icon:'🌾', t:'frac',  q:1,    u:'cup',   name:'semolina (rava)',    sub:'',         cal:340, key:'semolina' },
       { icon:'🧅', t:'frac',  q:1,    u:'medium', name:'onion, chopped',    sub:'',         cal:44,  key:'onion' },
@@ -126,7 +124,6 @@ const recipes = [
     readyMins: 45,
     baseServings: 4,
     heroEmoji: '🫘',
-    heroSrc: 'https://upload.wikimedia.org/wikipedia/commons/3/37/Rajma_Masala_%2832081557778%29.jpg',
     ingredients: [
       { icon:'🫘', t:'frac',  q:2,   u:'cups',  name:'kidney beans (rajma)', sub:'(soaked overnight)', cal:450, key:'rajma' },
       { icon:'🧅', t:'count', q:2,   u:'',      name:'onions, finely chopped',sub:'',                  cal:88,  key:'onion' },
@@ -163,7 +160,6 @@ const recipes = [
     readyMins: 75,
     baseServings: 4,
     heroEmoji: '🍗',
-    heroSrc: 'https://www.themealdb.com/images/media/meals/xrttsx1487339558.jpg',
     ingredients: [
       { icon:'🍗', t:'frac',  q:800,  u:'g',    name:'chicken (bone-in pieces)', sub:'',             cal:1200, key:'chicken' },
       { icon:'🍚', t:'frac',  q:2,    u:'cups', name:'basmati rice',             sub:'(soaked 30 min)',cal:680, key:'basmati' },
@@ -200,7 +196,6 @@ const recipes = [
     readyMins: 30,
     baseServings: 4,
     heroEmoji: '🍛',
-    heroSrc: 'https://upload.wikimedia.org/wikipedia/commons/8/85/Vegetable_pulao.JPG',
     ingredients: [
       { icon:'🍚', t:'frac',  q:2,   u:'cups', name:'basmati rice',           sub:'(rinsed & soaked 20 min)', cal:680, key:'basmati' },
       { icon:'🥕', t:'frac',  q:1,   u:'cup',  name:'carrots, diced',         sub:'',                         cal:50,  key:'carrot' },
@@ -237,7 +232,6 @@ const recipes = [
     readyMins: 25,
     baseServings: 2,
     heroEmoji: '🌾',
-    heroSrc: 'https://upload.wikimedia.org/wikipedia/commons/5/58/Half_wheat_veg_upma.jpg',
     ingredients: [
       { icon:'🌾', t:'frac',  q:1,    u:'cup',   name:'samai (little millet)',  sub:'(rinsed, drained)',  cal:340, key:'samai' },
       { icon:'🧅', t:'frac',  q:1,    u:'medium',name:'onion, finely chopped',  sub:'',                   cal:44,  key:'onion' },
@@ -274,7 +268,6 @@ const recipes = [
     readyMins: 15,
     baseServings: 2,
     heroEmoji: '🍿',
-    heroSrc: 'https://upload.wikimedia.org/wikipedia/commons/1/17/Uggani_bajji.jpg',
     ingredients: [
       { icon:'🍿', t:'frac',  q:4,    u:'cups',  name:'borugulu (puffed rice)',  sub:'',              cal:200, key:'puffed-rice' },
       { icon:'🥜', t:'frac',  q:3,    u:'tbsp',  name:'peanuts',                sub:'(roasted)',     cal:150, key:'peanuts' },
@@ -311,7 +304,6 @@ const recipes = [
     readyMins: 30,
     baseServings: 2,
     heroEmoji: '🌾',
-    heroSrc: 'https://upload.wikimedia.org/wikipedia/commons/6/65/Broken_rice_upma_%26_coconut_chutney.jpg',
     ingredients: [
       { icon:'🌾', t:'frac',  q:1,    u:'cup',   name:'goduma rava (broken wheat / dalia)', sub:'(coarse)',  cal:340, key:'broken-wheat' },
       { icon:'🧅', t:'frac',  q:1,    u:'medium',name:'onion, finely chopped',              sub:'',          cal:44,  key:'onion' },
@@ -348,7 +340,6 @@ const recipes = [
     readyMins: 35,
     baseServings: 4,
     heroEmoji: '🧀',
-    heroSrc: 'https://upload.wikimedia.org/wikipedia/commons/a/ad/Shahi_panner.jpg',
     ingredients: [
       { icon:'🧀', t:'frac',  q:250,  u:'g',     name:'paneer, cubed',              sub:'',              cal:680,  key:'paneer' },
       { icon:'🧈', t:'frac',  q:4,    u:'tbsp',  name:'butter (unsalted)',           sub:'',              cal:400,  key:'butter' },
@@ -386,7 +377,6 @@ const recipes = [
     readyMins: 50,
     baseServings: 4,
     heroEmoji: '🍢',
-    heroSrc: 'https://upload.wikimedia.org/wikipedia/commons/b/b0/Panner_tikka_Masala.JPG',
     ingredients: [
       { icon:'🧀', t:'frac',  q:300,  u:'g',    name:'paneer, cubed',             sub:'',                cal:816, key:'paneer' },
       { icon:'🥛', t:'frac',  q:150,  u:'g',    name:'thick yogurt',              sub:'(for marinade)',   cal:112, key:'yogurt' },
@@ -425,7 +415,6 @@ const recipes = [
     readyMins: 50,
     baseServings: 4,
     heroEmoji: '🫘',
-    heroSrc: 'https://upload.wikimedia.org/wikipedia/commons/9/9e/Chole_Bhature_from_Nagpur.JPG',
     ingredients: [
       { icon:'🫘', t:'frac',  q:1.5,  u:'cups', name:'chickpeas (kabuli chana)',   sub:'(soaked overnight)', cal:540, key:'chickpeas' },
       { icon:'🍅', t:'frac',  q:3,    u:'medium',name:'tomatoes, finely chopped',  sub:'',                   cal:66,  key:'tomato' },
@@ -463,7 +452,6 @@ const recipes = [
     readyMins: 30,
     baseServings: 4,
     heroEmoji: '🫕',
-    heroSrc: 'https://upload.wikimedia.org/wikipedia/commons/7/73/Dal_tadka_and_naan.jpg',
     ingredients: [
       { icon:'🟡', t:'frac',  q:1,    u:'cup',   name:'toor dal (split pigeon pea)', sub:'(rinsed)',      cal:350, key:'dal' },
       { icon:'🍅', t:'count', q:2,    u:'',       name:'tomatoes, chopped',          sub:'',              cal:44,  key:'tomato' },
@@ -501,7 +489,6 @@ const recipes = [
     readyMins: 30,
     baseServings: 2,
     heroEmoji: '🍲',
-    heroSrc: 'https://upload.wikimedia.org/wikipedia/commons/2/21/Ven_pongal_with_sambar_and_chutney.jpg',
     ingredients: [
       { icon:'🍚', t:'frac',  q:0.75, u:'cup',  name:'raw rice (sona masoori)',   sub:'',              cal:255, key:'rice' },
       { icon:'🟡', t:'frac',  q:0.25, u:'cup',  name:'yellow moong dal',          sub:'',              cal:80,  key:'moong-dal' },
@@ -535,7 +522,6 @@ const recipes = [
     readyMins: 25,
     baseServings: 2,
     heroEmoji: '🍲',
-    heroSrc: 'https://upload.wikimedia.org/wikipedia/commons/6/63/Dall_Khichdi.jpg',
     ingredients: [
       { icon:'🍚', t:'frac',  q:0.5,  u:'cup',  name:'rice (any short-grain)',   sub:'',              cal:170, key:'rice' },
       { icon:'🟡', t:'frac',  q:0.5,  u:'cup',  name:'yellow moong dal',         sub:'(split, washed)', cal:160, key:'moong-dal' },
@@ -572,7 +558,6 @@ const recipes = [
     readyMins: 25,
     baseServings: 3,
     heroEmoji: '🍢',
-    heroSrc: 'https://upload.wikimedia.org/wikipedia/commons/f/f2/Paneer_tikka.jpg',
     ingredients: [
       { icon:'🧀', t:'frac',  q:250,  u:'g',    name:'paneer, cubed',              sub:'',                cal:680, key:'paneer' },
       { icon:'📦', t:'count', q:1,    u:'',      name:'Rasoi Magic Paneer Tikka Masala packet', sub:'(50g)', cal:60, key:'masala' },
@@ -603,7 +588,6 @@ const recipes = [
     readyMins: 35,
     baseServings: 4,
     heroEmoji: '🍗',
-    heroSrc: 'https://upload.wikimedia.org/wikipedia/commons/4/41/Butter_Chicken_%26_Butter_Naan_-_Home_-_Chandigarh_-_India_-_0006.jpg',
     ingredients: [
       { icon:'🍗', t:'frac',  q:600,  u:'g',    name:'boneless chicken, cubed',    sub:'',                cal:900, key:'chicken' },
       { icon:'📦', t:'count', q:1,    u:'',      name:'Rasoi Magic Butter Chicken Masala packet', sub:'(50g)', cal:60, key:'masala' },
@@ -634,7 +618,6 @@ const recipes = [
     readyMins: 30,
     baseServings: 4,
     heroEmoji: '🫘',
-    heroSrc: 'https://upload.wikimedia.org/wikipedia/commons/9/9e/Chole_Bhature_from_Nagpur.JPG',
     ingredients: [
       { icon:'🫘', t:'frac',  q:400,  u:'g',    name:'chickpeas (canned or cooked)', sub:'',               cal:480, key:'chickpeas' },
       { icon:'📦', t:'count', q:1,    u:'',      name:'Rasoi Magic Chhole Masala packet', sub:'(50g)',      cal:60,  key:'masala' },
@@ -666,7 +649,6 @@ const recipes = [
     readyMins: 30,
     baseServings: 4,
     heroEmoji: '🥭',
-    heroSrc: 'https://upload.wikimedia.org/wikipedia/commons/2/2c/Kairi_Daal.jpg',
     ingredients: [
       { icon:'🟡', t:'frac',  q:1,    u:'cup',   name:'toor dal (split pigeon pea)', sub:'(rinsed)',       cal:350, key:'dal' },
       { icon:'🥭', t:'frac',  q:1,    u:'medium',name:'raw green mango, chopped',    sub:'(peeled, firm)', cal:60,  key:'mango' },
@@ -700,7 +682,6 @@ const recipes = [
     readyMins: 30,
     baseServings: 4,
     heroEmoji: '🥒',
-    heroSrc: 'https://upload.wikimedia.org/wikipedia/commons/9/99/Dosekai_%285193855973%29.jpg',
     ingredients: [
       { icon:'🟡', t:'frac',  q:1,    u:'cup',   name:'toor dal',                   sub:'(rinsed)',        cal:350, key:'dal' },
       { icon:'🥒', t:'frac',  q:2,    u:'cups',  name:'dosakai (yellow cucumber), cubed', sub:'(peeled, deseeded)', cal:30, key:'dosakai' },
@@ -734,7 +715,6 @@ const recipes = [
     readyMins: 28,
     baseServings: 4,
     heroEmoji: '🌿',
-    heroSrc: 'https://upload.wikimedia.org/wikipedia/commons/4/47/Dal_Palak_Spinach_and_lentil_curry_%2815914333462%29.jpg',
     ingredients: [
       { icon:'🟡', t:'frac',  q:1,    u:'cup',   name:'toor dal',                   sub:'(rinsed)',        cal:350, key:'dal' },
       { icon:'🌿', t:'frac',  q:200,  u:'g',     name:'fresh spinach (palak)',       sub:'(roughly chopped)', cal:46, key:'spinach' },
@@ -768,7 +748,6 @@ const recipes = [
     readyMins: 30,
     baseServings: 4,
     heroEmoji: '🌱',
-    heroSrc: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Gongura_pappu_at_Social_dinner_of_WCI_2023_Day-0_at_Hyatt_Hyderabad_Gachibowli.jpg',
     ingredients: [
       { icon:'🟡', t:'frac',  q:1,    u:'cup',   name:'toor dal',                   sub:'(rinsed)',        cal:350, key:'dal' },
       { icon:'🌱', t:'frac',  q:100,  u:'g',     name:'gongura leaves (red sorrel)', sub:'(stalks removed)', cal:30, key:'gongura' },
@@ -802,7 +781,6 @@ const recipes = [
     readyMins: 35,
     baseServings: 4,
     heroEmoji: '🍲',
-    heroSrc: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Indian_Sambar.jpg',
     ingredients: [
       { icon:'🟡', t:'frac',  q:0.75, u:'cup',  name:'toor dal',                   sub:'(rinsed)',         cal:265, key:'dal' },
       { icon:'🟤', t:'frac',  q:2,    u:'tbsp', name:'tamarind paste',             sub:'(or lemon-sized ball soaked)', cal:15, key:'tamarind' },
@@ -837,7 +815,6 @@ const recipes = [
     readyMins: 28,
     baseServings: 4,
     heroEmoji: '🌿',
-    heroSrc: 'https://upload.wikimedia.org/wikipedia/commons/c/c6/Basale_Gasi_-Home_Bangalore_Karnataka_-03.jpg',
     ingredients: [
       { icon:'🟡', t:'frac',  q:1,    u:'cup',   name:'toor dal',                   sub:'(rinsed)',        cal:350, key:'dal' },
       { icon:'🌿', t:'frac',  q:150,  u:'g',     name:'bacchali (Malabar spinach)', sub:'(leaves & tender stems)', cal:25, key:'bacchali' },
@@ -870,7 +847,6 @@ const recipes = [
     readyMins: 28,
     baseServings: 4,
     heroEmoji: '🌿',
-    heroSrc: 'https://upload.wikimedia.org/wikipedia/commons/d/d9/Pakoda_Besan_Dal_%26_Methi_%28Mumbai%29_%281%29.jpg',
     ingredients: [
       { icon:'🟡', t:'frac',  q:1,    u:'cup',   name:'toor dal',                   sub:'(rinsed)',        cal:350, key:'dal' },
       { icon:'🌿', t:'frac',  q:100,  u:'g',     name:'fresh methi leaves (fenugreek)', sub:'(cleaned)',   cal:25,  key:'methi' },
@@ -904,7 +880,6 @@ const recipes = [
     readyMins: 40,
     baseServings: 6,
     heroEmoji: '🍲',
-    heroSrc: 'https://upload.wikimedia.org/wikipedia/commons/8/80/South_Indian_Sambar.jpg',
     ingredients: [
       { icon:'🟡', t:'frac',  q:1,    u:'cup',   name:'toor dal',                   sub:'(rinsed)',        cal:350, key:'dal' },
       { icon:'🍆', t:'count', q:1,    u:'',      name:'small brinjal (eggplant), quartered', sub:'',       cal:20,  key:'brinjal' },
@@ -942,7 +917,6 @@ const recipes = [
     readyMins: 20,
     baseServings: 4,
     heroEmoji: '🥞',
-    heroSrc: 'https://upload.wikimedia.org/wikipedia/commons/1/11/Idli_Sambar.JPG',
     ingredients: [
       { icon:'🍚', t:'frac',  q:3,    u:'cups',  name:'idly rice (parboiled rice)', sub:'(soaked 6 hrs)',  cal:1020, key:'rice' },
       { icon:'⚪', t:'frac',  q:1,    u:'cup',   name:'urad dal (split black gram)', sub:'(soaked 6 hrs)', cal:280,  key:'urad-dal' },
@@ -970,7 +944,6 @@ const recipes = [
     readyMins: 15,
     baseServings: 4,
     heroEmoji: '🫓',
-    heroSrc: 'https://upload.wikimedia.org/wikipedia/commons/d/d1/Dosa_Classic.jpg',
     ingredients: [
       { icon:'🍚', t:'frac',  q:3,    u:'cups',  name:'idly rice',                  sub:'(soaked 6 hrs)',  cal:1020, key:'rice' },
       { icon:'⚪', t:'frac',  q:1,    u:'cup',   name:'urad dal',                   sub:'(soaked 6 hrs)', cal:280,  key:'urad-dal' },
@@ -999,7 +972,6 @@ const recipes = [
     readyMins: 20,
     baseServings: 4,
     heroEmoji: '🥞',
-    heroSrc: 'https://upload.wikimedia.org/wikipedia/commons/c/c6/Mini_Uttappam.jpg',
     ingredients: [
       { icon:'🍚', t:'frac',  q:2,    u:'cups',  name:'idly/dosa batter',           sub:'(fermented)',     cal:680, key:'rice' },
       { icon:'🧅', t:'frac',  q:1,    u:'large', name:'onion, finely chopped',       sub:'',               cal:55,  key:'onion' },
@@ -1032,7 +1004,6 @@ const recipes = [
     readyMins: 12,
     baseServings: 2,
     heroEmoji: '🥦',
-    heroSrc: 'https://upload.wikimedia.org/wikipedia/commons/5/53/Pak_kanaa_namman_hoi.jpg',
     ingredients: [
       { icon:'🥦', t:'frac',  q:400,  u:'g',    name:'broccoli, cut into florets', sub:'',               cal:136, key:'broccoli' },
       { icon:'🧄', t:'count', q:6,    u:'',     name:'garlic cloves, thinly sliced', sub:'',             cal:24,  key:'garlic' },
@@ -1062,7 +1033,6 @@ const recipes = [
     readyMins: 20,
     baseServings: 2,
     heroEmoji: '🥦',
-    heroSrc: 'https://upload.wikimedia.org/wikipedia/commons/5/53/Pak_kanaa_namman_hoi.jpg',
     ingredients: [
       { icon:'🥦', t:'frac',  q:400,  u:'g',    name:'broccoli, cut into small florets', sub:'',          cal:136, key:'broccoli' },
       { icon:'🟤', t:'frac',  q:4,    u:'tbsp', name:'besan (chickpea flour)',        sub:'',              cal:160, key:'besan' },
@@ -1096,7 +1066,6 @@ const recipes = [
     readyMins: 20,
     baseServings: 2,
     heroEmoji: '🫓',
-    heroSrc: 'https://upload.wikimedia.org/wikipedia/commons/6/6c/Pesarattu.jpg',
     ingredients: [
       { icon:'💚', t:'frac',  q:1,    u:'cup',   name:'whole green moong dal',       sub:'(soaked 4–6 hrs)', cal:350, key:'moong-dal' },
       { icon:'🌶️',t:'count', q:2,    u:'',       name:'green chillies',              sub:'',                 cal:8,   key:'green-chilli' },
@@ -1128,7 +1097,6 @@ const recipes = [
     readyMins: 55,
     baseServings: 4,
     heroEmoji: '🍗',
-    heroSrc: 'https://upload.wikimedia.org/wikipedia/commons/d/d7/Steamed_Rice_with_Gongura_chicken.jpg',
     ingredients: [
       { icon:'🍗', t:'frac',  q:800,  u:'g',    name:'chicken (bone-in pieces)',    sub:'',                cal:1200, key:'chicken' },
       { icon:'🌱', t:'frac',  q:200,  u:'g',    name:'gongura leaves (red sorrel)', sub:'(stalks removed)', cal:50,  key:'gongura' },
@@ -1164,7 +1132,6 @@ const recipes = [
     readyMins: 70,
     baseServings: 4,
     heroEmoji: '🍲',
-    heroSrc: 'https://upload.wikimedia.org/wikipedia/commons/2/21/Natu_kodi_pulusu.jpg',
     ingredients: [
       { icon:'🍗', t:'frac',  q:800,  u:'g',    name:'country chicken (natu kodi)', sub:'(bone-in, curry cut)', cal:1000, key:'chicken' },
       { icon:'🟤', t:'frac',  q:3,    u:'tbsp', name:'tamarind paste',              sub:'',                     cal:25,   key:'tamarind' },
@@ -1201,7 +1168,6 @@ const recipes = [
     readyMins: 40,
     baseServings: 4,
     heroEmoji: '🍆',
-    heroSrc: 'https://upload.wikimedia.org/wikipedia/commons/0/0c/Gutti_vankaya_curry.jpg',
     ingredients: [
       { icon:'🍆', t:'count', q:8,    u:'',     name:'small brinjals (eggplant)',   sub:'(kept whole with stem)', cal:160, key:'brinjal' },
       { icon:'🥜', t:'frac',  q:3,    u:'tbsp', name:'peanuts, roasted',            sub:'',                      cal:150,  key:'peanuts' },
@@ -1235,7 +1201,6 @@ const recipes = [
     readyMins: 25,
     baseServings: 4,
     heroEmoji: '🥚',
-    heroSrc: 'https://upload.wikimedia.org/wikipedia/commons/1/19/Egg_curry.jpg',
     ingredients: [
       { icon:'🥚', t:'count', q:6,    u:'',     name:'eggs, hard-boiled & peeled',  sub:'',                cal:468,  key:'eggs' },
       { icon:'🧅', t:'count', q:2,    u:'',     name:'onions, finely chopped',      sub:'',                cal:88,   key:'onion' },
@@ -1274,7 +1239,6 @@ const recipes = [
     readyMins: 40,
     baseServings: 4,
     heroEmoji: '🫕',
-    heroSrc: 'https://upload.wikimedia.org/wikipedia/commons/6/69/Punjabi_style_Dal_Makhani.jpg',
     ingredients: [
       { icon:'⚫', t:'frac',  q:1,    u:'cup',  name:'whole black urad dal',        sub:'(soaked overnight)', cal:380, key:'urad-dal' },
       { icon:'🫘', t:'frac',  q:0.25, u:'cup',  name:'rajma (kidney beans)',         sub:'(soaked overnight)', cal:112, key:'rajma' },
@@ -1304,7 +1268,6 @@ const recipes = [
     readyMins: 30,
     baseServings: 4,
     heroEmoji: '🍞',
-    heroSrc: 'https://upload.wikimedia.org/wikipedia/commons/4/4a/Bambayya_Pav_bhaji.jpg',
     ingredients: [
       { icon:'🥔', t:'frac',  q:400,  u:'g',    name:'potatoes, boiled & mashed',   sub:'',                cal:308, key:'potato' },
       { icon:'🥦', t:'frac',  q:1,    u:'cup',  name:'mixed vegetables, boiled',    sub:'(peas, carrot, cauliflower)', cal:80, key:'carrot' },
@@ -1338,7 +1301,6 @@ const recipes = [
     readyMins: 25,
     baseServings: 4,
     heroEmoji: '🍢',
-    heroSrc: 'https://upload.wikimedia.org/wikipedia/commons/7/7d/Kadai_Paneer-Delhi-12.jpg',
     ingredients: [
       { icon:'🧀', t:'frac',  q:300,  u:'g',    name:'paneer, cubed',               sub:'',                cal:816, key:'paneer' },
       { icon:'📦', t:'count', q:1,    u:'',     name:'Rasoi Magic Kadai Paneer packet', sub:'(50g)',        cal:60,  key:'masala' },
@@ -1508,9 +1470,12 @@ function buildFlyer(recipe) {
   ).join('');
 
   const storedPhoto = (() => { try { return localStorage.getItem('paka.photo.' + recipe.id); } catch(e) { return null; } })();
-  const heroMedia = (storedPhoto || recipe.heroSrc)
-    ? `<img class="hero-img" src="${storedPhoto || recipe.heroSrc}" alt="${recipe.title}">`
-    : `<div class="hero-placeholder">${recipe.heroEmoji}</div>`;
+  const twemojiUrl  = (() => {
+    const cp = [...recipe.heroEmoji].map(c => c.codePointAt(0).toString(16)).join('-');
+    return `https://cdn.jsdelivr.net/gh/jdecked/twemoji@latest/assets/svg/${cp}.svg`;
+  })();
+  const heroSrc   = storedPhoto || twemojiUrl;
+  const heroMedia = `<img class="hero-img${storedPhoto ? '' : ' hero-emoji'}" src="${heroSrc}" alt="${recipe.title}">`;
 
   const rStats  = getRecipeStats(recipe.id);
   const myLikes = loadSet('paka.myLikes');

@@ -447,9 +447,20 @@ body {
   display: block;
   width: 100%;
   height: 344px;
-  object-fit: cover;
   -webkit-mask-image: radial-gradient(ellipse 68% 70% at 50% 52%, #000 44%, rgba(0,0,0,0) 84%);
           mask-image: radial-gradient(ellipse 68% 70% at 50% 52%, #000 44%, rgba(0,0,0,0) 84%);
+}
+
+/* Admin-uploaded real photo */
+.hero-img {
+  object-fit: cover;
+}
+
+/* Twemoji clipart illustration */
+.hero-img.hero-emoji {
+  object-fit: contain;
+  padding: 28px 36px;
+  background: radial-gradient(ellipse at 50% 40%, #fff8e7 0%, #f0dcaa 60%, #d9be75 100%);
 }
 
 .hero-placeholder {
