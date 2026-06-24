@@ -152,6 +152,7 @@ body {
   padding: 16px 24px 30px;
   width: 100%;
   max-width: 920px;
+  flex: 1;
 }
 
 .flyer-wrap {
@@ -953,22 +954,25 @@ body {
 }
 .ai-send:hover { background: #1f5a22; }
 
-/* ── Bottom panels (trending + saved) ───────────── */
-.bottom-panels {
+/* ── Stage outer wrapper ─────────────────────────── */
+.stage-outer {
   display: flex;
+  align-items: flex-start;
   gap: 16px;
-  justify-content: center;
   width: 100%;
-  max-width: 920px;
-  padding: 0 24px 130px;
+  max-width: 1360px;
+  padding: 0 12px;
 }
 
+/* ── Sidebar tiles ───────────────────────────────── */
 .trending-tile, .saved-tile {
-  flex: 1;
-  max-width: 220px;
-  min-width: 148px;
+  width: 168px;
+  flex-shrink: 0;
   border-radius: 18px;
   padding: 14px 12px 16px;
+  margin-top: 24px;
+  position: sticky;
+  top: 16px;
 }
 
 .trending-tile {
@@ -1053,7 +1057,11 @@ body {
 .like-btn.active         { background: #2f6e2e; color: #fbf3d3; border-color: #2f6e2e; }
 .save-btn.active         { background: #f7cf3f; color: #1f5a22; border-color: #d4ae35; }
 
-/* ── Responsive: ≤600px — bottom panels full-width ─ */
+/* ── Responsive: ≤1100px — hide sidebars ─────────── */
+@media (max-width: 1100px) {
+  .trending-tile, .saved-tile { display: none; }
+  .stage-outer { padding: 0; }
+}
 
 /* ── Responsive: ≤860px — tablet ─────────────────── */
 @media (max-width: 860px) {
@@ -1126,10 +1134,6 @@ body {
   .brush-banner { font-size: 14px; padding: 6px 12px; }
   .section-banner.green-banner,
   .brush-banner.yellow-banner { font-size: 15px; }
-
-  /* Bottom panels full-width on mobile */
-  .bottom-panels { max-width: 100%; padding: 0 12px 130px; gap: 10px; }
-  .trending-tile, .saved-tile { max-width: none; min-width: 0; }
 
   /* Fixed pills: stack vertically */
   .suggest-pill { font-size: 12px; padding: 9px 14px; bottom: 76px; left: 16px; }
