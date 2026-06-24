@@ -152,7 +152,6 @@ body {
   padding: 16px 24px 30px;
   width: 100%;
   max-width: 920px;
-  flex: 1;
 }
 
 .flyer-wrap {
@@ -954,25 +953,22 @@ body {
 }
 .ai-send:hover { background: #1f5a22; }
 
-/* ── Stage outer (recipe + sidebars) ────────────── */
-.stage-outer {
+/* ── Bottom panels (trending + saved) ───────────── */
+.bottom-panels {
   display: flex;
-  align-items: flex-start;
   gap: 16px;
+  justify-content: center;
   width: 100%;
-  max-width: 1360px;
-  padding: 0 12px;
+  max-width: 920px;
+  padding: 0 24px 130px;
 }
 
-/* ── Sidebar tiles ───────────────────────────────── */
 .trending-tile, .saved-tile {
-  width: 168px;
-  flex-shrink: 0;
+  flex: 1;
+  max-width: 220px;
+  min-width: 148px;
   border-radius: 18px;
   padding: 14px 12px 16px;
-  margin-top: 24px;
-  position: sticky;
-  top: 16px;
 }
 
 .trending-tile {
@@ -1057,12 +1053,9 @@ body {
 .like-btn.active         { background: #2f6e2e; color: #fbf3d3; border-color: #2f6e2e; }
 .save-btn.active         { background: #f7cf3f; color: #1f5a22; border-color: #d4ae35; }
 
-/* ── Responsive ──────────────────────────────────── */
-@media (max-width: 1100px) {
-  .trending-tile, .saved-tile { display: none; }
-  .stage-outer { padding: 0; }
-}
+/* ── Responsive: ≤600px — bottom panels full-width ─ */
 
+/* ── Responsive: ≤860px — tablet ─────────────────── */
 @media (max-width: 860px) {
   .stage { gap: 10px; padding: 12px 12px 24px; }
   .arrow { width: 44px; height: 44px; margin-top: 80px; }
@@ -1071,17 +1064,88 @@ body {
   .footer-stripe { margin: 0 -28px; }
 }
 
-@media (max-width: 620px) {
-  .app-tagline { display: none; }
-  .stage { padding: 8px 0 20px; gap: 4px; }
-  .arrow { width: 36px; height: 36px; margin-top: 60px; }
-  .flyer-card { padding: 24px 18px 0; }
-  .recipe-title { font-size: 60px; }
-  .flyer-header { flex-direction: column; }
+/* ── Responsive: ≤600px — mobile ─────────────────── */
+@media (max-width: 600px) {
+  /* Header: logo+tagline row, then full-width search */
+  .app-header {
+    grid-template-columns: 1fr auto;
+    grid-template-areas: "logo tagline" "search search";
+    padding: 10px 14px;
+    gap: 8px 12px;
+  }
+  .app-logo           { grid-area: logo; }
+  .app-tagline        { grid-area: tagline; font-size: 9px; letter-spacing: 0.12em; justify-self: end; }
+  .header-search-wrap { grid-area: search; width: 100%; max-width: none; }
+
+  /* Stage */
+  .stage { padding: 6px 4px 18px; gap: 4px; }
+  .arrow { width: 34px; height: 34px; margin-top: 44px; }
+
+  /* Card */
+  .flyer-card { padding: 22px 16px 0; }
+  .footer-stripe { margin: 0 -16px; }
+
+  /* Flyer header: image first, then text */
+  .flyer-header { flex-direction: column; gap: 10px; }
   .title-col { width: 100%; }
-  .hero-col { width: 100%; }
-  .flyer-body { flex-direction: column; }
-  .ing-col { width: 100%; }
-  .footer-stripe { margin: 0 -18px; }
+  .hero-col  { width: 100%; order: -1; }
+  .hero-img, .hero-placeholder { height: 210px; }
+  .ready-badge { left: auto; right: 8px; bottom: -8px; width: 82px; height: 82px; }
+  .ready-num { font-size: 22px; }
+  .ready-top, .ready-bot { font-size: 10px; }
+
+  /* Title */
+  .recipe-script { font-size: 20px; }
+  .recipe-title  { font-size: 52px; }
+  .recipe-blurb  { max-width: 100%; font-size: 15px; margin-top: 12px; }
+  .diet-tags     { max-width: 100%; }
+
+  /* Like panel */
+  .like-panel { flex-wrap: wrap; gap: 6px; padding: 8px 0 4px; }
+  .like-btn   { font-size: 12px; padding: 5px 11px; }
+
+  /* Serving calculator */
+  .calc-box    { gap: 12px; padding: 12px 14px; margin-top: 16px; }
+  .cooking-for { font-size: 18px; }
+  .cal-summary { margin-left: 0; text-align: left; width: 100%; }
+
+  /* Body */
+  .flyer-body { flex-direction: column; gap: 22px; margin-top: 22px; }
+  .ing-col    { width: 100%; }
+  .ing-item   { font-size: 13.5px; }
+
+  /* Serve section */
+  .serve-items { gap: 16px; flex-wrap: wrap; }
+
+  /* Footer text */
+  .footer-left  { font-size: 16px; }
+  .footer-right { font-size: 19px; }
+  .flyer-footer { padding: 14px 0 16px; }
+
+  /* Brush banners */
+  .brush-banner { font-size: 14px; padding: 6px 12px; }
+  .section-banner.green-banner,
+  .brush-banner.yellow-banner { font-size: 15px; }
+
+  /* Bottom panels full-width on mobile */
+  .bottom-panels { max-width: 100%; padding: 0 12px 130px; gap: 10px; }
+  .trending-tile, .saved-tile { max-width: none; min-width: 0; }
+
+  /* Fixed pills: stack vertically */
+  .suggest-pill { font-size: 12px; padding: 9px 14px; bottom: 76px; left: 16px; }
+  .ai-pill      { font-size: 12px; padding: 9px 14px; bottom: 20px; right: 16px; }
+
+  /* AI drawer full-width */
   .ai-drawer { width: 100vw; }
+}
+
+/* ── Responsive: ≤390px — small phones ───────────── */
+@media (max-width: 390px) {
+  .flyer-card   { padding: 16px 12px 0; }
+  .footer-stripe { margin: 0 -12px; }
+  .recipe-title { font-size: 44px; }
+  .recipe-script { font-size: 18px; }
+  .step-btn   { width: 28px; height: 28px; font-size: 17px; }
+  .step-input { width: 44px; height: 30px; font-size: 15px; }
+  .like-btn   { font-size: 11px; padding: 5px 9px; }
 }

@@ -41,42 +41,40 @@
     <span class="app-tagline">Try Something Different Today</span>
   </header>
 
-  <!-- Carousel + sidebars -->
-  <div class="stage-outer">
+  <!-- Carousel -->
+  <main class="stage">
+    <button class="arrow arrow-l" id="prevBtn" aria-label="Previous recipe">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+           stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+        <polyline points="15,18 9,12 15,6"/>
+      </svg>
+    </button>
 
+    <div class="flyer-wrap">
+      <div class="flyer-card" id="flyerCard"></div>
+    </div>
+
+    <button class="arrow arrow-r" id="nextBtn" aria-label="Next recipe">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+           stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+        <polyline points="9,6 15,12 9,18"/>
+      </svg>
+    </button>
+  </main>
+
+  <p class="recipe-counter" id="recipeCounter"></p>
+
+  <!-- Trending + Saved panels -->
+  <div class="bottom-panels">
     <aside class="trending-tile" id="trendingTile">
       <div class="tile-head">🔥 Trending</div>
       <ul class="tile-list" id="trendingList"></ul>
     </aside>
-
-    <main class="stage">
-      <button class="arrow arrow-l" id="prevBtn" aria-label="Previous recipe">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-             stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
-          <polyline points="15,18 9,12 15,6"/>
-        </svg>
-      </button>
-
-      <div class="flyer-wrap">
-        <div class="flyer-card" id="flyerCard"></div>
-      </div>
-
-      <button class="arrow arrow-r" id="nextBtn" aria-label="Next recipe">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-             stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
-          <polyline points="9,6 15,12 9,18"/>
-        </svg>
-      </button>
-    </main>
-
     <aside class="saved-tile" id="savedTile">
       <div class="tile-head">🔖 Saved</div>
       <ul class="tile-list" id="savedList"></ul>
     </aside>
-
   </div>
-
-  <p class="recipe-counter" id="recipeCounter"></p>
 
   <!-- Admin mode banner -->
   <div class="admin-banner" id="adminBanner" style="display:none">
