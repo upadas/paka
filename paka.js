@@ -414,7 +414,7 @@ const recipes = [
     blurb: 'Chunky chickpeas simmered in a robust, tangy masala — a hearty dish with personality in every bite!',
     readyMins: 50,
     baseServings: 4,
-    heroEmoji: '🫘',
+    heroEmoji: '🧆',
     ingredients: [
       { icon:'🫘', t:'frac',  q:1.5,  u:'cups', name:'chickpeas (kabuli chana)',   sub:'(soaked overnight)', cal:540, key:'chickpeas' },
       { icon:'🍅', t:'frac',  q:3,    u:'medium',name:'tomatoes, finely chopped',  sub:'',                   cal:66,  key:'tomato' },
@@ -617,7 +617,7 @@ const recipes = [
     blurb: 'Bold, tangy, deep-coloured chole made easy with the iconic Rasoi Magic masala packet!',
     readyMins: 30,
     baseServings: 4,
-    heroEmoji: '🫘',
+    heroEmoji: '🧆',
     ingredients: [
       { icon:'🫘', t:'frac',  q:400,  u:'g',    name:'chickpeas (canned or cooked)', sub:'',               cal:480, key:'chickpeas' },
       { icon:'📦', t:'count', q:1,    u:'',      name:'Rasoi Magic Chhole Masala packet', sub:'(50g)',      cal:60,  key:'masala' },
@@ -1739,16 +1739,16 @@ function sizeTitleBlob() {
 
 /* ── Navigation ─────────────────────────────────────────────────── */
 document.getElementById('prevBtn').addEventListener('click', () => {
-  if (currentIdx > 0) { currentIdx--; renderFlyer(currentIdx, true); }
+  if (currentIdx > 0) { currentIdx--; renderFlyer(currentIdx, true); resetAuto(); }
 });
 document.getElementById('nextBtn').addEventListener('click', () => {
-  if (currentIdx < recipes.length - 1) { currentIdx++; renderFlyer(currentIdx, true); }
+  if (currentIdx < recipes.length - 1) { currentIdx++; renderFlyer(currentIdx, true); resetAuto(); }
 });
 
 document.addEventListener('keydown', e => {
   if (e.target.tagName === 'INPUT') return;
-  if (e.key === 'ArrowLeft'  && currentIdx > 0)                  { currentIdx--; renderFlyer(currentIdx, true); }
-  if (e.key === 'ArrowRight' && currentIdx < recipes.length - 1) { currentIdx++; renderFlyer(currentIdx, true); }
+  if (e.key === 'ArrowLeft'  && currentIdx > 0)                  { currentIdx--; renderFlyer(currentIdx, true); resetAuto(); }
+  if (e.key === 'ArrowRight' && currentIdx < recipes.length - 1) { currentIdx++; renderFlyer(currentIdx, true); resetAuto(); }
 });
 
 /* touch swipe */
@@ -1757,8 +1757,8 @@ flyerCard.addEventListener('touchstart', e => { swipeX = e.touches[0].clientX; }
 flyerCard.addEventListener('touchend',   e => {
   const dx = swipeX - e.changedTouches[0].clientX;
   if (Math.abs(dx) < 50) return;
-  if (dx > 0 && currentIdx < recipes.length - 1) { currentIdx++; renderFlyer(currentIdx, true); }
-  if (dx < 0 && currentIdx > 0)                  { currentIdx--; renderFlyer(currentIdx, true); }
+  if (dx > 0 && currentIdx < recipes.length - 1) { currentIdx++; renderFlyer(currentIdx, true); resetAuto(); }
+  if (dx < 0 && currentIdx > 0)                  { currentIdx--; renderFlyer(currentIdx, true); resetAuto(); }
 });
 
 /* ── AI Assistant ───────────────────────────────────────────────── */
@@ -1824,7 +1824,7 @@ function handleAiSend() {
     btn.addEventListener('click', () => {
       const id  = btn.dataset.id;
       const idx = recipes.findIndex(r => r.id === id);
-      if (idx >= 0) { currentIdx = idx; renderFlyer(currentIdx, true); closeDrawer(); }
+      if (idx >= 0) { currentIdx = idx; renderFlyer(currentIdx, true); resetAuto(); closeDrawer(); }
     });
   });
 }
@@ -2001,7 +2001,7 @@ function renderTrending() {
     </li>`;
   }).join('');
   list.querySelectorAll('.tile-item').forEach(li => {
-    li.addEventListener('click', () => { currentIdx = +li.dataset.idx; renderFlyer(currentIdx, true); });
+    li.addEventListener('click', () => { currentIdx = +li.dataset.idx; renderFlyer(currentIdx, true); resetAuto(); });
   });
 }
 
@@ -2023,11 +2023,26 @@ function renderSaved() {
     </li>`;
   }).join('');
   list.querySelectorAll('.tile-item').forEach(li => {
-    li.addEventListener('click', () => { currentIdx = +li.dataset.idx; renderFlyer(currentIdx, true); });
+    li.addEventListener('click', () => { currentIdx = +li.dataset.idx; renderFlyer(currentIdx, true); resetAuto(); });
   });
 }
+
+/* ── Auto-advance carousel ──────────────────────────────────────── */
+let autoTimer = null;
+
+function startAuto() {
+  clearTimeout(autoTimer);
+  autoTimer = setTimeout(() => {
+    currentIdx = (currentIdx + 1) % recipes.length;
+    renderFlyer(currentIdx, true);
+    startAuto();
+  }, 5000);
+}
+
+function resetAuto() { startAuto(); }
 
 /* ── Init ───────────────────────────────────────────────────────── */
 renderFlyer(0, false);
 renderTrending();
 renderSaved();
+startAuto();
