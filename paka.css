@@ -181,6 +181,18 @@ body {
 }
 .arrow:disabled { opacity: 0.35; pointer-events: none; }
 
+/* ── Next-arrow nudge — invites the user to the next recipe ── */
+@keyframes arrowNudge {
+  0%, 100% { transform: translateX(0);   box-shadow: 0 6px 18px rgba(20,50,15,0.35); }
+  25%      { transform: translateX(7px); box-shadow: 0 0 0 5px rgba(47,110,46,0.22), 0 10px 24px rgba(20,50,15,0.45); }
+  50%      { transform: translateX(0);   box-shadow: 0 6px 18px rgba(20,50,15,0.35); }
+  75%      { transform: translateX(7px); box-shadow: 0 0 0 5px rgba(47,110,46,0.22), 0 10px 24px rgba(20,50,15,0.45); }
+}
+.arrow.nudge { animation: arrowNudge 1s ease; }
+@media (prefers-reduced-motion: reduce) {
+  .arrow.nudge { animation: none; }
+}
+
 /* ── Recipe counter ──────────────────────────────── */
 .recipe-counter {
   color: rgba(251,243,211,0.65);

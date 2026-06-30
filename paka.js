@@ -2636,19 +2636,27 @@ function renderSaved() {
   });
 }
 
-/* ── Auto-advance carousel ──────────────────────────────────────── */
-let autoTimer = null;
+/* ── Next-arrow nudge — hint there's more, never auto-advance ────── */
+let nudgeTimer = null;
 
 function startAuto() {
-  clearTimeout(autoTimer);
-  autoTimer = setTimeout(() => {
-    currentIdx = (currentIdx + 1) % recipes.length;
-    renderFlyer(currentIdx, true);
-    startAuto();
-  }, 5000);
+  clearTimeout(nudgeTimer);
+  nudgeTimer = setTimeout(function nudge() {
+    const next = document.getElementById('nextBtn');
+    if (next && !next.disabled) {
+      next.classList.remove('nudge');
+      void next.offsetWidth;        // reflow so the animation restarts
+      next.classList.add('nudge');
+    }
+    nudgeTimer = setTimeout(nudge, 6000);
+  }, 6000);
 }
 
-function resetAuto() { startAuto(); }
+function resetAuto() {
+  const next = document.getElementById('nextBtn');
+  if (next) next.classList.remove('nudge');
+  startAuto();
+}
 
 /* ── Init ───────────────────────────────────────────────────────── */
 renderFlyer(0, false);
