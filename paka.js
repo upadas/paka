@@ -2157,11 +2157,12 @@ function buildFlyer(recipe) {
       </div>
 
       <div class="cal-summary">
-        <div class="cal-total"><span id="totalCal">${totalCal}</span> <span class="cal-unit">calories</span></div>
-        <div class="cal-sub">whole cooked ${recipe.title} · <b id="perServing">${perServing}</b> cal per serving</div>
+        <div class="cal-total"><span class="cal-approx">≈</span> <span id="totalCal">${totalCal}</span> <span class="cal-unit">calories</span></div>
+        <div class="cal-sub">whole ${recipe.title} · <b id="perServing">${perServing}</b> cal per serving</div>
       </div>
 
       <div class="calc-note">Measurements & calories scale automatically · each child counts as ½ an adult portion.</div>
+      <div class="cal-disclaimer">Calorie figures are an approximate guide — a ballpark estimate summed from raw ingredients, not exact or lab-measured. Actual values vary with brand, portion size &amp; how it's cooked.</div>
     </div>
 
     <div class="flyer-body">
